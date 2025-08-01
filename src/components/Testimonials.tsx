@@ -1,32 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import CardWrapper from "./shared/card-wrapper";
-
-const projects = [
-  {
-    title: "Project 1",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. lorem amet consectetur adipisicing elit. lorem amet consectetur adipisicing elit. lorem",
-  },
-  {
-    title: "Project 2",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. ",
-  },
-  {
-    title: "Project 3",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
-  },
-  {
-    title: "Project 4 ",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing ",
-  },
-  {
-    title: "Project 5",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing eliLorem ipsum dolor sit amet consectetur adipisicing eliLorem ipsum dolor sit amet consectetur adipisicing eli Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. ",
-  },
-];
+import { testimonials } from "../lib/constants";
 
 export const Testimonials = () => {
   useGSAP(() => {
@@ -35,7 +10,7 @@ export const Testimonials = () => {
     gsap.from(cardWrappers, {
       y: 100,
       opacity: 0,
-      duration: 1,
+      duration: 2.5,
       ease: "power2.inOut",
       stagger: 0.2,
       scrollTrigger: {
@@ -51,11 +26,26 @@ export const Testimonials = () => {
         <p className="header-text text-color-white-50">Testimonials</p>
       </div>
       <div className="lg:columns-3 md:columns-2 columns-1 mt-16">
-        {projects.map((project, index) => (
+        {testimonials.map((testimonial, index) => (
           <CardWrapper
             key={index}
             index={index}
-            children={<p>{project.description}</p>}
+            review={testimonial.review}
+            children={
+              <div className="flex items-center gap-3">
+                <div>
+                  <img
+                    src={testimonial.imgPath}
+                    alt=""
+                    className="w-10 h-10 rounded-full"
+                  />
+                </div>
+                <div>
+                  <p className="font-bold">{testimonial.name}</p>
+                  <p className="text-white-50">{testimonial.mentions}</p>
+                </div>
+              </div>
+            }
           />
         ))}
       </div>

@@ -9,6 +9,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import gsap from "gsap";
 import { ScrollSmoother, ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
+import Technologies from "./components/Technologies";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -32,6 +33,7 @@ function App() {
           <AnimatedCounter />
           <About />
           <Testimonials />
+          <Technologies />
           <Contact />
         </div>
       </div>
