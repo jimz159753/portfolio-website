@@ -1,18 +1,20 @@
 import { navigationItems } from "../lib/constants";
 import type { NavItem } from "../lib/interfaces";
 import { useScrollSmoother } from "../hooks/navbar";
+import React from "react";
 
 const NavItem: React.FC<{
   item: NavItem;
   onClick: (sectionId: string) => void;
   className?: string;
 }> = ({ item, onClick, className = "" }) => (
-  <li>
+  <li className="relative">
     <button
       onClick={() => onClick(item.id)}
-      className={`hover:text-white-50 transition-colors duration-300 cursor-pointer ${className}`}
+      className={`text-white transition-colors duration-300 cursor-pointer relative group/item ${className}`}
     >
       {item.label}
+      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-sky-700 transition-all duration-300 group-hover/item:w-full"></span>
     </button>
   </li>
 );
@@ -22,12 +24,12 @@ export const Navbar = () => {
     useScrollSmoother();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900 bg-opacity-90 backdrop-blur-sm border-b border-gray-700">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b border-gray-700 flex justify-between items-center px-6 py-4">
       {/* Logo/Brand */}
       <div className="text-xl font-bold text-white">Portfolio</div>
 
       {/* Desktop Navigation - Right side */}
-      <ul className="hidden md:flex gap-8">
+      <ul className="hidden md:flex gap-8 group">
         {navigationItems.map((item) => (
           <NavItem key={item.id} item={item} onClick={scrollToSection} />
         ))}
@@ -75,9 +77,10 @@ export const Navbar = () => {
             >
               <button
                 onClick={() => scrollToSection(item.id)}
-                className="w-full text-left text-white hover:text-white-50 transition-colors duration-300 cursor-pointer py-2"
+                className="w-full text-left text-white hover:text-blue-400 transition-colors duration-300 cursor-pointer py-2 relative"
               >
                 {item.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 hover:w-full"></span>
               </button>
             </li>
           ))}

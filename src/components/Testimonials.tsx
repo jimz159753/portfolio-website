@@ -10,7 +10,7 @@ export const Testimonials = () => {
     gsap.from(cardWrappers, {
       y: 100,
       opacity: 0,
-      duration: 2.5,
+      duration: 1,
       ease: "power2.inOut",
       stagger: 0.2,
       scrollTrigger: {

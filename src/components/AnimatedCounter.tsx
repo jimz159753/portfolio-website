@@ -3,61 +3,82 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 
-import { counterItems } from "../lib/constants";
-
 gsap.registerPlugin(ScrollTrigger);
 
 const AnimatedCounter = () => {
   const counterRef = useRef<HTMLDivElement>(null);
-  const countersRef = useRef<HTMLElement[]>([]);
+  const counterNumbersRef = useRef<HTMLElement[]>([]);
 
-  useGSAP(() => {
-    countersRef.current.forEach((counter, index) => {
-      const numberElement = counter.querySelector(
-        ".counter-number"
-      ) as HTMLElement;
-      const item = counterItems[index];
+  useGSAP(
+    () => {
+      if (!counterRef.current) return;
 
-      // Set initial value to 0
-      gsap.set(numberElement, { innerText: "0" });
+      // Get all counter number elements
+      const numberElements =
+        counterRef.current.querySelectorAll(".counter-number");
+      counterNumbersRef.current = Array.from(numberElements) as HTMLElement[];
 
-      // Create the counting animation
-      gsap.to(numberElement, {
-        innerText: item.value,
-        duration: 2.5,
-        ease: "power2.out",
-        snap: { innerText: 1 }, // Ensures whole numbers
-        scrollTrigger: {
-          trigger: "#counter",
-          start: "top center",
-        },
-        // Add the suffix after counting is complete
-        onComplete: () => {
-          numberElement.textContent = `${item.value}${item.suffix}`;
-        },
+      // Define the target values for each counter
+      const targetValues = [52, 96, 8];
+      const suffixes = ["+", "%", "+"];
+
+      counterNumbersRef.current.forEach((numberElement, index) => {
+        if (!numberElement) return;
+
+        // Set initial value to 0
+        gsap.set(numberElement, { innerText: "0" });
+
+        // Create the counting animation
+        gsap.to(numberElement, {
+          innerText: targetValues[index],
+          duration: 2.5,
+          ease: "power2.out",
+          snap: { innerText: 1 }, // Ensures whole numbers
+          scrollTrigger: {
+            trigger: counterRef.current,
+            start: "top center",
+            end: "bottom center",
+            toggleActions: "play none none reverse",
+          },
+          // Add the suffix after counting is complete
+          onComplete: () => {
+            numberElement.textContent = `${targetValues[index]}${suffixes[index]}`;
+          },
+        });
       });
-    }, counterRef);
-  }, []);
+    },
+    { scope: counterRef }
+  );
 
   return (
-    <div id="counter" ref={counterRef} className="padding-x-lg xl:mt-0 pt-32">
-      <div className="mx-auto grid sm:grid-cols-1 xl:grid-cols-4 gap-4 ">
-        {counterItems.map((item, index) => (
-          <div
-            key={index}
-            ref={(el) => {
-              if (el) {
-                countersRef.current[index] = el;
-              }
-            }}
-            className="bg-zinc-900 rounded-lg p-10 flex flex-col justify-center"
-          >
-            <div className="counter-number text-white-50 text-5xl font-bold mb-2">
-              0 {item.suffix}
+    <div id="counter" ref={counterRef} className="xl:mt-0 pt-32 flex-center">
+      <div className="w-3/4">
+        <div className="bg-zinc-900 rounded-lg p-10 flex md:flex-row flex-col gap-4 justify-around w-full rounded-xl ">
+          <div className="flex-1">
+            <div className="counter-number text-white-50 text-4xl mb-2 flex-center">
+              0
             </div>
-            <div className="text-white-50 text-lg">{item.label}</div>
+            <div className="text-gray-400 font-satoshi text-lg flex-center">
+              Design projects
+            </div>
           </div>
-        ))}
+          <div className="md:border-x border-y sm:border-x-0 sm:border-y-0 py-4 sm:py-0 border-gray-400 flex-1">
+            <div className="counter-number text-white-50 text-4xl mb-2 flex-center">
+              0
+            </div>
+            <div className="text-gray-400 font-satoshi text-lg flex-center text-center">
+              Client satisfaction rate.
+            </div>
+          </div>
+          <div className="flex-1">
+            <div className="counter-number text-white-50 text-4xl  mb-2 flex-center">
+              0
+            </div>
+            <div className="text-gray-400 font-satoshi text-lg flex-center">
+              Years of experience
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

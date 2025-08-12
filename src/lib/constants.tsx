@@ -7,13 +7,7 @@ import aws from "../assets/aws.png";
 import docker from "../assets/docker.png";
 import google from "../assets/google.png";
 import stripe from "../assets/stripe.png";
-
-export const counterItems = [
-  { value: 8, suffix: "+", label: "Years of Experience" },
-  { value: 45, suffix: "+", label: "Satisfied Clients" },
-  { value: 52, suffix: "+", label: "Completed Projects" },
-  { value: 90, suffix: "%", label: "Client Retention Rate" },
-];
+import { ListCheck, Lightbulb, Rocket } from "lucide-react";
 
 export const testimonials = [
   {
@@ -91,5 +85,29 @@ export const technologies = [
   },
   {
     icon: stripe,
+  },
+];
+
+export const processData = [
+  {
+    step: "1",
+    title: "Define Your Vision",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    icon: <Lightbulb size={32} />,
+  },
+  {
+    step: "2",
+    title: "Submit Your Requirements",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    icon: <ListCheck size={32} />,
+  },
+  {
+    step: "3",
+    title: "Project Delivery",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    icon: <Rocket size={32} />,
   },
 ];

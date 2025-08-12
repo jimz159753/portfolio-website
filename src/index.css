@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Public Sans";
+  src: url("./assets/fonts/Satoshi-Medium.otf") format("opentype");
+}
+
 :root {
   --gradient: radial-gradient(circle, #e5e5e5 0%, #fff 100%);
 }
@@ -7,7 +12,7 @@
 @theme {
   --font-roboto-flex: "Roboto Flex", sans-serif;
   --font-lobster-two: "Lobster Two", cursive;
-  --font-public-sans: "Public Sans", sans-serif;
+  --font-satoshi: "Satoshi", sans-serif;
 
   --color-white-50: #d9ecff;
   --color-black-50: #1c1c21;
@@ -17,15 +22,11 @@
 
 @layer base {
   body {
-    @apply min-h-screen text-white overflow-x-hidden;
+    @apply min-h-screen text-white overflow-x-hidden font-satoshi;
   }
 
   section {
-    @apply py-14 min-h-screen;
-  }
-
-  nav {
-    @apply fixed w-full z-50 top-0 font-roboto-flex flex justify-between items-center p-4 border-b border-black-50 bg-black/80;
+    @apply py-14;
   }
 }
 
@@ -35,7 +36,7 @@
   }
 
   .header-text {
-    @apply font-bold font-public-sans text-4xl;
+    @apply font-bold font-satoshi text-4xl;
   }
 }
 
@@ -47,14 +48,6 @@
   .card-border {
     @apply border border-black-50 bg-black-100;
   }
-}
-
-.main-background {
-  background-image: url("../src/assets/desktop-setup.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: brightness(0.5);
 }
 
 .card {
@@ -148,7 +141,7 @@
 }
 
 .logo_items img {
-  @apply h-[70px] mx-[15px] my-0;
+  @apply h-[50px] mx-[15px] my-0;
   filter: grayscale(100%);
   transition: filter 0.3s ease, transform 0.3s ease;
 }
