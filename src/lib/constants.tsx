@@ -93,21 +93,21 @@ export const processData = [
     step: "1",
     title: "Define Your Vision",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-    icon: <Lightbulb size={32} />,
+      "Find the perfect plan tailored to your needs, offering the right balance of features, flexibility, and value to help you achieve your goals effortlessly.",
+    icon: <Lightbulb size={24} />,
   },
   {
     step: "2",
     title: "Submit Your Requirements",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-    icon: <ListCheck size={32} />,
+      "Easily submit your design requirements through our private design portal, ensuring a seamless process where your vision is understood, refined, and brought to life with precision and creativity.",
+    icon: <ListCheck size={24} />,
   },
   {
     step: "3",
     title: "Project Delivery",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-    icon: <Rocket size={32} />,
+      "As a dedicated freelancer, I ensure your project is completed with precision and delivered within 2-3 days. With a keen eye for detail and a passion for quality, I bring your vision to life—on time and beyond expectations.",
+    icon: <Rocket size={24} />,
   },
 ];

@@ -25,7 +25,7 @@ export const Hero = () => {
           className="absolute inset-0 w-full h-full object-cover"
           style={{ filter: "brightness(0.5)" }}
         >
-          <source src="/src/assets/background2.mp4" type="video/mp4" />
+          <source src="/src/assets/background.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
