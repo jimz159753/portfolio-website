@@ -6,6 +6,7 @@ import { Contact } from "./components/Contact";
 import AnimatedCounter from "./components/AnimatedCounter";
 import Technologies from "./components/Technologies";
 import { Process } from "./components/Process";
+import { About } from "./components/About";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Navbar />
         <Hero />
         <div className="relative sm:px-4 md:px-14">
+          <About />
           <AnimatedCounter />
           <Process />
           <Testimonials />

@@ -23,7 +23,7 @@ export const Hero = () => {
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ filter: "brightness(0.5)" }}
+          style={{ filter: "brightness(0.2)" }}
         >
           <source src="/src/assets/asteroid.mp4" type="video/mp4" />
           Your browser does not support the video tag.
