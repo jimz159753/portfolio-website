@@ -18,6 +18,7 @@ export const Testimonials = () => {
         trigger: "#testimonials",
         start: "top 90%",
         end: "bottom center",
+        toggleActions: "restart none restart none",
       },
     });
   });

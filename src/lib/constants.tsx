@@ -14,48 +14,49 @@ export const testimonials = [
     name: "Esther Howard",
     mentions: "@estherhoward",
     review:
-      "I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
+      "I can’t say enough good things about Luis. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
     imgPath: "/images/client1.png",
   },
   {
     name: "Wade Warren",
     mentions: "@wadewarren",
     review:
-      "Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
+      "Working with Luis was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
     imgPath: "/images/client3.png",
   },
   {
     name: "Guy Hawkins",
     mentions: "@guyhawkins",
     review:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
+      "Collaborating with Luis was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Luis's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Luis is the ideal partner.",
     imgPath: "/images/client2.png",
   },
   {
     name: "Marvin McKinney",
     mentions: "@marvinmckinney",
     review:
-      "Adrian was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
+      "Luis was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
     imgPath: "/images/client5.png",
   },
   {
     name: "Floyd Miles",
     mentions: "@floydmiles",
     review:
-      "Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
+      "Luis’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
     imgPath: "/images/client4.png",
   },
   {
     name: "Albert Flores",
     mentions: "@albertflores",
     review:
-      "Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
+      "Luis was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
     imgPath: "/images/client6.png",
   },
 ];
 
 export const navigationItems: NavItem[] = [
   { id: "about", label: "About" },
+  { id: "process", label: "Process" },
   { id: "testimonials", label: "Testimonials" },
   { id: "technologies", label: "Technologies" },
   { id: "contact", label: "Contact" },
@@ -109,5 +110,39 @@ export const processData = [
     description:
       "As a dedicated freelancer, I ensure your project is completed with precision and delivered within 2-3 days. With a keen eye for detail and a passion for quality, I bring your vision to life—on time and beyond expectations.",
     icon: <Rocket size={24} />,
+  },
+];
+
+export const skillsData = [
+  "Product Design",
+  "UX Design",
+  "Fullstack Development",
+  "DevOps",
+  "Cloud Computing",
+  "Database Management",
+  "API Development",
+  "Mobile App Development",
+];
+
+export const historyData = [
+  {
+    position: "Fullstack Developer",
+    company: "Brillio",
+    year: "2020",
+  },
+  {
+    position: "Fullstack Developer",
+    company: "3 Pillar Global",
+    year: "2019",
+  },
+  {
+    position: "Fullstack Developer",
+    company: "Improving",
+    year: "2018",
+  },
+  {
+    position: "Fullstack Developer",
+    company: "Lenovo",
+    year: "2017",
   },
 ];

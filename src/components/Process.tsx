@@ -4,13 +4,21 @@ import { CardProcess } from "./shared/card-process";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { HeaderWrapper } from "./shared/header-wrapper";
+import SplitText from "gsap/SplitText";
+
+gsap.registerPlugin(SplitText);
 
 export const Process = () => {
   useGSAP(() => {
+    const splitText = new SplitText(".process-title", {
+      type: "words",
+    });
+
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: "#process",
-        start: "top center",
+        start: "30% bottom",
+        toggleActions: "restart none restart none",
       },
     });
 
@@ -22,6 +30,18 @@ export const Process = () => {
     });
 
     timeline.from(
+      splitText.words,
+      {
+        y: 100,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.8,
+        ease: "sine2.inOut",
+      },
+      "-=0.8"
+    );
+
+    timeline.from(
       ".process-card",
       {
         y: 100,
@@ -30,7 +50,7 @@ export const Process = () => {
         ease: "power2.inOut",
         stagger: 0.2,
       },
-      "-=1.2"
+      "-=1"
     );
   });
 
@@ -41,13 +61,13 @@ export const Process = () => {
           <img
             src={process}
             alt="process"
-            className="hover:scale-110 grayscale hover:grayscale-0 transition-all duration-500 h-full w-full"
+            className="hover:scale-110 grayscale hover:grayscale-0 transition-all duration-500 h-full w-full rounded-xl"
           />
         </div>
 
         <div className="md:w-1/2 w-full flex flex-col justify-between gap-4 px-10">
           <HeaderWrapper>How it works</HeaderWrapper>
-          <h1 className="text-color-white-50 text-6xl font-light">
+          <h1 className="process-title text-color-white-50 text-6xl font-light">
             Process <span className="text-gray-400">is Everything</span>
           </h1>
           <p className="text-gray-400 text-lg">
