@@ -10,10 +10,10 @@ import { Process } from "./components/Process";
 function App() {
   return (
     <div id="app">
-      <div id="content">
+      <div id="content" className="bg-gradient-to-b bg-black">
         <Navbar />
         <Hero />
-        <div className="relative sm:px-4 md:px-14 bg-gradient-to-b bg-gradient-to-b from-black to-gray-800">
+        <div className="relative sm:px-4 md:px-14">
           <AnimatedCounter />
           <Process />
           <Testimonials />

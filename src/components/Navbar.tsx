@@ -11,10 +11,10 @@ const NavItem: React.FC<{
   <li className="relative">
     <button
       onClick={() => onClick(item.id)}
-      className={`text-white transition-colors duration-300 cursor-pointer relative group/item ${className}`}
+      className={`text-white font-light transition-colors duration-300 cursor-pointer relative group/item ${className}`}
     >
       {item.label}
-      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-sky-700 transition-all duration-300 group-hover/item:w-full"></span>
+      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white-50 transition-all duration-300 group-hover/item:w-full"></span>
     </button>
   </li>
 );
@@ -56,7 +56,7 @@ export const Navbar = () => {
 
       {/* Mobile menu overlay */}
       <div
-        className={`absolute top-full left-0 right-0 bg-gray-900 bg-opacity-95 backdrop-blur-sm md:hidden z-50 transition-all duration-300 ease-in-out ${
+        className={`absolute top-full left-0 right-0 bg-transparent bg-opacity-95 backdrop-blur-sm md:hidden z-50 transition-all duration-300 ease-in-out ${
           isMobileMenuOpen
             ? "opacity-100 transform translate-y-0"
             : "opacity-0 transform -translate-y-4 pointer-events-none"
@@ -77,10 +77,10 @@ export const Navbar = () => {
             >
               <button
                 onClick={() => scrollToSection(item.id)}
-                className="w-full text-left text-white hover:text-blue-400 transition-colors duration-300 cursor-pointer py-2 relative"
+                className="w-full text-left text-white hover:text-white-50 transition-colors duration-300 cursor-pointer py-2 relative"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white-50 transition-all duration-300 hover:w-full"></span>
               </button>
             </li>
           ))}

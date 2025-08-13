@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import CardWrapper from "./shared/card-wrapper";
 import { testimonials } from "../lib/constants";
+import { HeaderWrapper } from "./shared/header-wrapper";
 
 export const Testimonials = () => {
   useGSAP(() => {
@@ -23,7 +24,7 @@ export const Testimonials = () => {
   return (
     <section id="testimonials">
       <div className="flex-center">
-        <p className="header-text text-color-white-50">Testimonials</p>
+        <HeaderWrapper>Testimonials</HeaderWrapper>
       </div>
       <div className="lg:columns-3 md:columns-2 columns-1 mt-16">
         {testimonials.map((testimonial, index) => (

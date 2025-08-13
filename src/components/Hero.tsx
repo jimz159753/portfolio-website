@@ -15,7 +15,7 @@ export const Hero = () => {
   });
   return (
     <div id="hero">
-      <div className="relative h-screen overflow-hidden">
+      <div className="relative h-screen overflow-hidden rounded-bl-[100%_100px] rounded-br-[100%_100px]">
         {/* Background Video */}
         <video
           autoPlay
@@ -25,7 +25,7 @@ export const Hero = () => {
           className="absolute inset-0 w-full h-full object-cover"
           style={{ filter: "brightness(0.5)" }}
         >
-          <source src="/src/assets/background.mp4" type="video/mp4" />
+          <source src="/src/assets/asteroid.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 

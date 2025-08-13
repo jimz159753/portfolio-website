@@ -34,10 +34,6 @@
   .flex-center {
     @apply flex items-center justify-center;
   }
-
-  .header-text {
-    @apply font-bold font-satoshi text-4xl;
-  }
 }
 
 @layer components {

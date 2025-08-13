@@ -1,8 +1,10 @@
+import { HeaderWrapper } from "./shared/header-wrapper";
+
 export const Contact = () => {
   return (
     <section id="contact">
       <div className="flex-center">
-        <p className="header-text">Where to find me</p>
+        <HeaderWrapper>Where to find me</HeaderWrapper>
       </div>
     </section>
   );

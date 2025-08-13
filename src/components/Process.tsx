@@ -3,6 +3,7 @@ import { processData } from "../lib/constants";
 import { CardProcess } from "./shared/card-process";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { HeaderWrapper } from "./shared/header-wrapper";
 
 export const Process = () => {
   useGSAP(() => {
@@ -40,19 +41,21 @@ export const Process = () => {
           <img
             src={process}
             alt="process"
-            className="hover:scale-110 grayscale hover:grayscale-0 transition-all duration-1000 h-full w-full blur-[1px] hover:blur-0"
+            className="hover:scale-110 grayscale hover:grayscale-0 transition-all duration-500 h-full w-full"
           />
         </div>
 
         <div className="md:w-1/2 w-full flex flex-col justify-between gap-4 px-10">
-          <p className="text-color-white-50">Design Process</p>
-          <h1 className="text-color-white-50 text-7xl">Process</h1>
+          <HeaderWrapper>How it works</HeaderWrapper>
+          <h1 className="text-color-white-50 text-6xl font-light">
+            Process <span className="text-gray-400">is Everything</span>
+          </h1>
           <p className="text-gray-400 text-lg">
             crafting bold visuals that inspire and elevate brands with thought
             process.
           </p>
-          <button className="bg-white-50 text-black-50 px-4 py-2 rounded-md cursor-pointer">
-            See projects
+          <button className="bg-transparent border border-white-50 shadow-lg hover:shadow-white-50/20 transition-all duration-300 w-fit p-2 text-white-50 px-4 py-2 rounded-lg cursor-pointer">
+            See Projects
           </button>
           <div className="w-full border border-gray-500 " />
           <div className="flex flex-col gap-10">
