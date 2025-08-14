@@ -9,7 +9,7 @@ export const CardProcess = ({
   description: string;
   icon: React.ReactNode;
 }) => (
-  <div className="process-card relative card-border rounded-xl p-10 break-inside-avoid-column flex flex-col gap-4">
+  <div className="process-card card-border rounded-xl p-10 break-inside-avoid-column flex flex-col gap-4">
     <p className="text-color-white-50 text-lg absolute top-4 right-6">{step}</p>
     {icon}
     <p className="text-color-white-50 text-2xl font-light">{title}</p>

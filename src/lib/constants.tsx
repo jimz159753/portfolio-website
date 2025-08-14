@@ -1,12 +1,5 @@
 import type { NavItem } from "./interfaces";
-import react from "../assets/react.png";
-import next from "../assets/next.png";
-import tailwindcss from "../assets/tailwindcss.png";
-import typescript from "../assets/typescript.png";
-import aws from "../assets/aws.png";
-import docker from "../assets/docker.png";
-import google from "../assets/google.png";
-import stripe from "../assets/stripe.png";
+
 import { ListCheck, Lightbulb, Rocket } from "lucide-react";
 
 export const testimonials = [
@@ -60,33 +53,6 @@ export const navigationItems: NavItem[] = [
   { id: "services", label: "Services" },
   { id: "testimonials", label: "Testimonials" },
   { id: "contact", label: "Contact" },
-];
-
-export const technologies = [
-  {
-    icon: next,
-  },
-  {
-    icon: react,
-  },
-  {
-    icon: tailwindcss,
-  },
-  {
-    icon: typescript,
-  },
-  {
-    icon: aws,
-  },
-  {
-    icon: docker,
-  },
-  {
-    icon: google,
-  },
-  {
-    icon: stripe,
-  },
 ];
 
 export const processData = [
