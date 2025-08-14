@@ -4,9 +4,9 @@ import { Navbar } from "./components/Navbar";
 import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
 import AnimatedCounter from "./components/AnimatedCounter";
-import Technologies from "./components/Technologies";
 import { Process } from "./components/Process";
 import { About } from "./components/About";
+import { Services } from "./components/Services";
 
 function App() {
   return (
@@ -16,10 +16,10 @@ function App() {
         <Hero />
         <div className="relative sm:px-4 md:px-14">
           <About />
-          <AnimatedCounter />
           <Process />
+          <AnimatedCounter />
+          <Services />
           <Testimonials />
-          <Technologies />
           <Contact />
         </div>
       </div>

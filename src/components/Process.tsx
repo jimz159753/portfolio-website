@@ -17,7 +17,7 @@ export const Process = () => {
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: "#process",
-        start: "30% center",
+        start: "top center",
         end: "70% center",
         toggleActions: "restart none restart none",
       },

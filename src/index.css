@@ -112,6 +112,16 @@
   }
 }
 
+.image-carousel {
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(0, 0, 0) 12.5%,
+    rgb(0, 0, 0) 87.5%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
 .marquee-container {
   @apply overflow-hidden relative mt-10 py-[30px];
   width: 100%;

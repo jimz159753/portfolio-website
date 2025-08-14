@@ -57,8 +57,8 @@ export const testimonials = [
 export const navigationItems: NavItem[] = [
   { id: "about", label: "About" },
   { id: "process", label: "Process" },
+  { id: "services", label: "Services" },
   { id: "testimonials", label: "Testimonials" },
-  { id: "technologies", label: "Technologies" },
   { id: "contact", label: "Contact" },
 ];
 
