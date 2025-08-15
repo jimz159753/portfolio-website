@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { HeaderWrapper } from "./shared/header-wrapper";
 import SplitText from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { isMobile } from "react-device-detect";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -43,41 +44,44 @@ export const Process = () => {
       "-=0.8"
     );
 
-    // Pin the process section to see animations clearly
-    ScrollTrigger.create({
-      trigger: "#process",
-      start: "top top",
-      end: "bottom center",
-      pin: true,
-      pinSpacing: true,
-    });
-
-    const cards = gsap.utils.toArray(".process-card");
-    const firstCard = cards[0] as HTMLElement;
-
-    cards.forEach((card) => {
-      const cardElement = card as HTMLElement;
-
-      // Calculate the offset to move each card to the first card's position
-      const firstCardRect = firstCard.getBoundingClientRect();
-      const cardRect = cardElement.getBoundingClientRect();
-      const offsetY = firstCardRect.top - cardRect.top;
-
-      gsap.to(cardElement, {
-        y: offsetY,
-        scrollTrigger: {
-          trigger: "#process",
-          start: "top top",
-          end: "+=70%",
-          scrub: true,
-        },
+    // Only pin and animate cards on desktop
+    if (!isMobile) {
+      // Pin the process section to see animations clearly
+      ScrollTrigger.create({
+        trigger: "#process",
+        start: "top top",
+        end: "bottom center",
+        pin: true,
+        pinSpacing: true,
       });
-    });
+
+      const cards = gsap.utils.toArray(".process-card");
+      const firstCard = cards[0] as HTMLElement;
+
+      cards.forEach((card) => {
+        const cardElement = card as HTMLElement;
+
+        // Calculate the offset to move each card to the first card's position
+        const firstCardRect = firstCard.getBoundingClientRect();
+        const cardRect = cardElement.getBoundingClientRect();
+        const offsetY = firstCardRect.top - cardRect.top;
+
+        gsap.to(cardElement, {
+          y: offsetY,
+          scrollTrigger: {
+            trigger: "#process",
+            start: "top top",
+            end: "+=70%",
+            scrub: true,
+          },
+        });
+      });
+    }
   });
 
   return (
     <section id="process">
-      <div className="flex md:flex-row flex-col md:justify-between justify-center h-[100dvh]">
+      <div className="flex md:flex-row flex-col md:justify-between justify-center md:h-[100dvh]">
         <div className="process-image md:w-1/2 w-full md:p-0 p-10 relative overflow-hidden rounded-xl ">
           <img
             src={process}
@@ -99,9 +103,10 @@ export const Process = () => {
             See Projects
           </button>
           <div className="w-full border border-gray-500 " />
-          <div className="cards-container flex flex-col gap-10 relative h-[800px]">
+          <div className="cards-container flex flex-col gap-10 relative md:h-[800px] h-auto">
             {processData.map((item) => (
               <CardProcess
+                key={item.step}
                 step={item.step}
                 title={item.title}
                 description={item.description}

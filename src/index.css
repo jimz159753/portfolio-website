@@ -104,11 +104,54 @@
   section {
     @apply py-8;
   }
+
+  /* Ensure cards are properly positioned on mobile */
+  .card,
+  .card-design,
+  .process-card {
+    position: relative !important;
+    transform: none !important;
+  }
+
+  /* Fix process cards container on mobile */
+  .cards-container {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  /* Disable GSAP animations on mobile for better performance */
+  .process-card {
+    transform: none !important;
+  }
 }
 
 @media (max-width: 480px) {
   section {
     @apply py-6;
+  }
+
+  /* Additional mobile fixes */
+  .card,
+  .card-design,
+  .process-card {
+    margin-bottom: 1rem;
+  }
+
+  /* Ensure proper card spacing on mobile */
+  .cards-container {
+    gap: 2rem !important;
+  }
+
+  /* Fix card padding on small screens */
+  .card,
+  .card-design,
+  .process-card {
+    padding: 1.5rem !important;
+  }
+
+  /* Ensure absolute positioned elements work properly */
+  .process-card .absolute {
+    position: absolute !important;
   }
 }
 

@@ -51,11 +51,7 @@ const AnimatedCounter = () => {
   );
 
   return (
-    <div
-      id="counter"
-      ref={counterRef}
-      className="xl:mt-0 pt-32 flex-center mb-20"
-    >
+    <div id="counter" ref={counterRef} className="flex-center my-20">
       <div className="w-3/4">
         <div className="card-border rounded-lg p-10 flex md:flex-row flex-col gap-4 justify-around w-full rounded-xl ">
           <div className="flex-1">
