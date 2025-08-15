@@ -5,7 +5,9 @@ import { useGSAP } from "@gsap/react";
 import { Figma, Headset, PanelsTopLeft, ShoppingBag } from "lucide-react";
 import bitcoins from "../assets/bitcoins.webp";
 import { CardDesign } from "./shared/card-design";
-import ecommerce from "../assets/ecommerce.webp";
+import ecommerce1 from "../assets/ecommerce1.webp";
+import ecommerce2 from "../assets/ecommerce2.webp";
+import ecommerce3 from "../assets/ecommerce3.webp";
 import { ImageCarousel } from "./shared/ImageCarousel";
 
 gsap.registerPlugin(SplitText);
@@ -85,7 +87,7 @@ export const Services = () => {
               description="Building secure, scalable online stores that integrate seamlessly with your business, offering a seamless shopping experience for your customers."
             >
               <ImageCarousel
-                images={[ecommerce, ecommerce, ecommerce]}
+                images={[ecommerce1, ecommerce2, ecommerce3]}
                 altText="ecommerce showcase"
                 autoPlay={true}
               />
