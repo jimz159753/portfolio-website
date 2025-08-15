@@ -3,6 +3,7 @@ import gsap from "gsap";
 import CardWrapper from "./shared/card-wrapper";
 import { testimonials } from "../lib/constants";
 import { HeaderWrapper } from "./shared/header-wrapper";
+import { isMobile } from "react-device-detect";
 
 export const Testimonials = () => {
   useGSAP(() => {
@@ -18,7 +19,9 @@ export const Testimonials = () => {
         trigger: "#testimonials",
         start: "top 90%",
         end: "bottom center",
-        toggleActions: "restart none restart none",
+        toggleActions: `${isMobile ? "play" : "restart"} none ${
+          isMobile ? "none" : "restart"
+        } none`,
       },
     });
   });

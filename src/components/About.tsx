@@ -4,6 +4,7 @@ import SplitText from "gsap/SplitText";
 import { CardHistory } from "./shared/card-history";
 import { CardProfile } from "./shared/card-profile";
 import { HeaderWrapper } from "./shared/header-wrapper";
+import { isMobile } from "react-device-detect";
 
 gsap.registerPlugin(SplitText);
 
@@ -21,7 +22,9 @@ export const About = () => {
         trigger: ".introduce-text",
         start: "30% center",
         end: "110% center",
-        toggleActions: "restart none restart none",
+        toggleActions: `${isMobile ? "play" : "restart"} none ${
+          isMobile ? "none" : "restart"
+        } none`,
       },
     });
 

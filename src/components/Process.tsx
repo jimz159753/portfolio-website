@@ -21,7 +21,9 @@ export const Process = () => {
         trigger: "#process",
         start: "top center",
         end: "70% center",
-        toggleActions: "restart none restart none",
+        toggleActions: `${isMobile ? "play" : "restart"} none ${
+          isMobile ? "none" : "restart"
+        } none`,
       },
     });
 

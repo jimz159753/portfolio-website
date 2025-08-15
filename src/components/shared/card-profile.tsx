@@ -20,7 +20,7 @@ export const CardProfile = () => (
       <br />
       Software Engineer Based in México.
     </p>
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 md:items-start items-center">
       <div className="grid grid-cols-3 w-full justify-items-center">
         <Linkedin
           className="w-5 h-5 cursor-pointer"
@@ -41,7 +41,7 @@ export const CardProfile = () => (
           onClick={() => window.open("https://wa.me/523315027257", "_blank")}
         />
       </div>
-      <div className="w-full border border-gray-500 " />
+      <div className="w-full border border-gray-500" />
       <button className="bg-transparent border border-white-50 shadow-lg hover:shadow-white-50/20 transition-all duration-300 w-fit p-2 text-white-50 px-4 py-2 rounded-lg cursor-pointer">
         Connect with me
       </button>

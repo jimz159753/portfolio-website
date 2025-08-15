@@ -10,6 +10,7 @@ import ecommerce2 from "../assets/ecommerce3.webp";
 import ecommerce3 from "../assets/ecommerce2.webp";
 import { ImageCarousel } from "./shared/ImageCarousel";
 import { technologies, skills } from "../lib/constants";
+import { isMobile } from "react-device-detect";
 
 gsap.registerPlugin(SplitText);
 
@@ -28,7 +29,9 @@ export const Services = () => {
         trigger: "#services",
         start: "top center",
         end: "70% center",
-        toggleActions: "restart none restart none",
+        toggleActions: `${isMobile ? "play" : "restart"} none ${
+          isMobile ? "none" : "restart"
+        } none`,
       },
     });
 
@@ -42,7 +45,9 @@ export const Services = () => {
         trigger: ".services-container",
         start: "top center",
         end: "70% center",
-        toggleActions: "restart none restart none",
+        toggleActions: `${isMobile ? "play" : "restart"} none ${
+          isMobile ? "none" : "restart"
+        } none`,
       },
     });
 
@@ -55,7 +60,9 @@ export const Services = () => {
         trigger: ".services-container",
         start: "top center",
         end: "70% center",
-        toggleActions: "restart none restart none",
+        toggleActions: `${isMobile ? "play" : "restart"} none ${
+          isMobile ? "none" : "restart"
+        } none`,
       },
     });
   });
