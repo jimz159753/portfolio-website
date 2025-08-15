@@ -7,37 +7,39 @@ gsap.registerPlugin(ScrollTrigger);
 export const Hero = () => {
   useGSAP(() => {
     gsap.from(".hero-text", {
-      y: 100,
       opacity: 0,
-      duration: 2.5,
+      duration: 2,
+      stagger: 0.4,
       ease: "power2.inOut",
+      scrollTrigger: {
+        trigger: "#hero",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "restart none restart none",
+      },
     });
   });
   return (
     <div id="hero">
-      <div className="relative h-screen overflow-hidden rounded-bl-[100%_100px] rounded-br-[100%_100px]">
-        {/* Background Video */}
+      <div className="relative h-screen overflow-hidden">
         <video
           autoPlay
           loop
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ filter: "brightness(0.5)" }}
+          style={{ filter: "brightness(0.2)" }}
         >
-          <source src="/src/assets/asteroid.mp4" type="video/mp4" />
+          <source src="/src/assets/processor.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-
-        {/* Content overlay */}
-        <div className="relative z-10 h-full flex items-end">
-          <p className="absolute bottom-[10%] left-[10%] font-roboto-flex text-2xl hero-text">
-            <span className="font-roboto-flex font-bold text-2x1">LUIS</span>
-            <br />
-            <span className="font-roboto-flex font-bold text-2xl">JIMENEZ</span>
+        <div className="absolute sm:w-3/4 w-full text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-roboto-flex text-2xl flex flex-col gap-4 items-center">
+          <p className="hero-text text-white md:text-6xl text-4xl font-light">
+            Scale Bussiness to drive Results
           </p>
-          <p className="font-bold absolute bottom-[10%] right-[10%] text-2xl hero-text">
-            SENIOR SOFTWARE <br /> ENGINEER
+          <p className="hero-text text-gray-300 sm:text-sm text-base text-center w-3/4 font-light">
+            Manage all your data and workflows in one place. Automate processes,
+            gain insights, and scale your business with ease.
           </p>
         </div>
       </div>

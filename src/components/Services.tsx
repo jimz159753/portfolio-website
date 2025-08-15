@@ -6,9 +6,10 @@ import { Figma, Headset, PanelsTopLeft, ShoppingBag } from "lucide-react";
 import bitcoins from "../assets/bitcoins.webp";
 import { CardDesign } from "./shared/card-design";
 import ecommerce1 from "../assets/ecommerce1.webp";
-import ecommerce2 from "../assets/ecommerce2.webp";
-import ecommerce3 from "../assets/ecommerce3.webp";
+import ecommerce2 from "../assets/ecommerce3.webp";
+import ecommerce3 from "../assets/ecommerce2.webp";
 import { ImageCarousel } from "./shared/ImageCarousel";
+import { technologies, skills } from "../lib/constants";
 
 gsap.registerPlugin(SplitText);
 
@@ -44,11 +45,24 @@ export const Services = () => {
         toggleActions: "restart none restart none",
       },
     });
+
+    gsap.from(".carousel-fade", {
+      opacity: 0,
+      duration: 2,
+      ease: "sine2.inOut",
+      stagger: 0.5,
+      scrollTrigger: {
+        trigger: ".services-container",
+        start: "top center",
+        end: "70% center",
+        toggleActions: "restart none restart none",
+      },
+    });
   });
   return (
     <section
       id="services"
-      className="services-container flex flex-col w-full items-center "
+      className="services-container flex flex-col w-full items-center"
     >
       <div className="flex flex-col w-3/4 gap-4">
         <HeaderWrapper>Services</HeaderWrapper>
@@ -90,9 +104,26 @@ export const Services = () => {
                 images={[ecommerce1, ecommerce2, ecommerce3]}
                 altText="ecommerce showcase"
                 autoPlay={true}
+                direction="left"
               />
             </CardDesign>
           </div>
+        </div>
+        <div className="flex flex-col mt-10 gap-4">
+          <ImageCarousel
+            classNameCarousel="carousel-fade"
+            tags={technologies}
+            altText="technologies"
+            autoPlay={true}
+            direction="left"
+          />
+          <ImageCarousel
+            classNameCarousel="carousel-fade"
+            tags={skills}
+            altText="skills"
+            autoPlay={true}
+            direction="right"
+          />
         </div>
       </div>
     </section>

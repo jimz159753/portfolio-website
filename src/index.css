@@ -165,6 +165,18 @@
   );
 }
 
+/* Tags-only carousel specific styles */
+.image-carousel:not(.has-images) {
+  background: #000000;
+}
+
+.image-carousel .tag-item {
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .marquee-container {
   @apply overflow-hidden relative mt-10 py-[30px];
   width: 100%;

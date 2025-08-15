@@ -1,6 +1,19 @@
 import type { NavItem } from "./interfaces";
 
-import { ListCheck, Lightbulb, Rocket } from "lucide-react";
+import {
+  ListCheck,
+  Lightbulb,
+  Rocket,
+  Code,
+  Search,
+  ChartLine,
+  Shield,
+  Figma,
+  ShoppingBag,
+  Landmark,
+  Database,
+  Megaphone,
+} from "lucide-react";
 
 export const testimonials = [
   {
@@ -110,5 +123,60 @@ export const historyData = [
     position: "Fullstack Developer",
     company: "Lenovo",
     year: "2017",
+  },
+];
+
+export const technologies = [
+  {
+    name: "Optimizations",
+    icon: <Lightbulb />,
+  },
+  {
+    name: "Custom Code",
+    icon: <Code />,
+  },
+
+  {
+    name: "SEO",
+    icon: <Search />,
+  },
+
+  {
+    name: "Performance",
+    icon: <ChartLine />,
+  },
+  {
+    name: "Security",
+    icon: <Shield />,
+  },
+];
+
+export const skills = [
+  {
+    name: "Figma",
+    icon: <Figma />,
+  },
+  {
+    name: "Ecommerce",
+    icon: <ShoppingBag />,
+  },
+  {
+    name: "Landing Page",
+    icon: <Landmark />,
+  },
+  {
+    name: "Databases",
+    icon: <Database />,
+  },
+  {
+    name: "Marketing",
+    icon: <Megaphone />,
+  },
+];
+
+export const projects = [
+  {
+    name: "Project 1",
+    image: "/images/project1.png",
   },
 ];
