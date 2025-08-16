@@ -44,7 +44,10 @@ export const Footer = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       const elementRect = element.getBoundingClientRect().top;
-      const offsetPosition = elementRect + window.pageYOffset - 20;
+      let offsetPosition = elementRect + window.pageYOffset - 20;
+      if (isMobile) {
+        offsetPosition = offsetPosition - 30;
+      }
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",
