@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { ScrollSmoother } from "gsap/all";
 
 export const useScrollSmoother = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -8,15 +7,12 @@ export const useScrollSmoother = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      // Get the ScrollSmoother instance
-      const smoother = ScrollSmoother.get();
-      if (smoother) {
-        // Use GSAP ScrollSmoother for smooth scrolling
-        smoother.scrollTo(element, true, "top top");
-      } else {
-        // Fallback to native smooth scroll if ScrollSmoother is not available
-        element.scrollIntoView({ behavior: "smooth" });
-      }
+      const elementRect = element.getBoundingClientRect().top;
+      const offsetPosition = elementRect + window.pageYOffset - 20;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     } else {
       console.log(`Section ${sectionId} not found`);
     }
