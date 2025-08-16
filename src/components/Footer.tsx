@@ -40,6 +40,28 @@ export const Footer = () => {
 
   const currentYear = new Date().getFullYear();
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const elementRect = element.getBoundingClientRect().top;
+      const offsetPosition = elementRect + window.pageYOffset - 20;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    } else {
+      console.log(`Section ${sectionId} not found`);
+    }
+  };
+
+  const handleFooterLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string
+  ) => {
+    e.preventDefault();
+    scrollToSection(sectionId);
+  };
+
   return (
     <footer id="footer" className="bg-black-100 border-t border-black-50 py-16">
       <div className="footer-content max-w-7xl mx-auto px-6">
@@ -93,6 +115,7 @@ export const Footer = () => {
                 <a
                   href="#about"
                   className="footer-link text-gray-400 hover:text-white transition-colors duration-300"
+                  onClick={(e) => handleFooterLinkClick(e, "about")}
                 >
                   About
                 </a>
@@ -101,6 +124,7 @@ export const Footer = () => {
                 <a
                   href="#services"
                   className="footer-link text-gray-400 hover:text-white transition-colors duration-300"
+                  onClick={(e) => handleFooterLinkClick(e, "services")}
                 >
                   Services
                 </a>
@@ -109,6 +133,7 @@ export const Footer = () => {
                 <a
                   href="#testimonials"
                   className="footer-link text-gray-400 hover:text-white transition-colors duration-300"
+                  onClick={(e) => handleFooterLinkClick(e, "testimonials")}
                 >
                   Testimonials
                 </a>
@@ -124,6 +149,7 @@ export const Footer = () => {
                 <a
                   href="#services"
                   className="footer-link text-gray-400 hover:text-white transition-colors duration-300"
+                  onClick={(e) => handleFooterLinkClick(e, "services")}
                 >
                   Web Development
                 </a>
@@ -132,6 +158,7 @@ export const Footer = () => {
                 <a
                   href="#services"
                   className="footer-link text-gray-400 hover:text-white transition-colors duration-300"
+                  onClick={(e) => handleFooterLinkClick(e, "services")}
                 >
                   UI/UX Design
                 </a>
@@ -140,6 +167,7 @@ export const Footer = () => {
                 <a
                   href="#services"
                   className="footer-link text-gray-400 hover:text-white transition-colors duration-300"
+                  onClick={(e) => handleFooterLinkClick(e, "services")}
                 >
                   E-commerce
                 </a>
@@ -148,6 +176,7 @@ export const Footer = () => {
                 <a
                   href="#services"
                   className="footer-link text-gray-400 hover:text-white transition-colors duration-300"
+                  onClick={(e) => handleFooterLinkClick(e, "services")}
                 >
                   Support
                 </a>
