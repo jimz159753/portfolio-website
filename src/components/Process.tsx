@@ -16,7 +16,8 @@ export const Process = () => {
       type: "words",
     });
 
-    const timeline = gsap.timeline({
+    // Optimize animations by creating a single timeline and reducing DOM queries
+    const mainTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: "#process",
         start: "top center",
@@ -27,24 +28,25 @@ export const Process = () => {
       },
     });
 
-    timeline.from(".process-image", {
-      x: -100,
-      opacity: 0,
-      duration: 1.2,
-      ease: "power2.inOut",
-    });
-
-    timeline.from(
-      splitText.words,
-      {
-        y: 100,
+    // Add image and text animations to the same timeline for better performance
+    mainTimeline
+      .from(".process-image", {
+        x: -100,
         opacity: 0,
-        stagger: 0.1,
-        duration: 0.8,
-        ease: "sine2.inOut",
-      },
-      "-=0.8"
-    );
+        duration: 1.2,
+        ease: "power2.inOut",
+      })
+      .from(
+        splitText.words,
+        {
+          y: 100,
+          opacity: 0,
+          stagger: 0.1,
+          duration: 0.8,
+          ease: "sine2.inOut",
+        },
+        "-=0.8"
+      );
 
     // Only pin and animate cards on desktop
     if (!isMobile) {
@@ -57,8 +59,19 @@ export const Process = () => {
         pinSpacing: true,
       });
 
+      // Optimize card animations by batching them together
       const cards = gsap.utils.toArray(".process-card");
       const firstCard = cards[0] as HTMLElement;
+
+      // Create a single timeline for all card animations
+      const cardTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#process",
+          start: "top top",
+          end: "+=70%",
+          scrub: true,
+        },
+      });
 
       cards.forEach((card) => {
         const cardElement = card as HTMLElement;
@@ -68,18 +81,17 @@ export const Process = () => {
         const cardRect = cardElement.getBoundingClientRect();
         const offsetY = firstCardRect.top - cardRect.top;
 
-        gsap.to(cardElement, {
-          y: offsetY,
-          scrollTrigger: {
-            trigger: "#process",
-            start: "top top",
-            end: "+=70%",
-            scrub: true,
+        cardTimeline.to(
+          cardElement,
+          {
+            y: offsetY,
+            duration: 0.1, // Small duration for scrub effect
           },
-        });
+          0
+        ); // Start all card animations at the same time
       });
     }
-  });
+  }, []);
 
   return (
     <section id="process">
@@ -101,9 +113,6 @@ export const Process = () => {
             crafting bold visuals that inspire and elevate brands with thought
             process.
           </p>
-          <button className="bg-transparent border border-white-50 shadow-lg hover:shadow-white-50/20 transition-all duration-300 w-fit p-2 text-white-50 px-4 py-2 rounded-lg cursor-pointer">
-            See Projects
-          </button>
           <div className="w-full border border-gray-500 " />
           <div className="cards-container flex flex-col gap-10 relative md:h-[800px] h-auto">
             {processData.map((item) => (

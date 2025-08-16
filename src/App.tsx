@@ -2,12 +2,11 @@ import "./App.css";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { Testimonials } from "./components/Testimonials";
-import { Contact } from "./components/Contact";
 import AnimatedCounter from "./components/AnimatedCounter";
 import { Process } from "./components/Process";
 import { About } from "./components/About";
 import { Services } from "./components/Services";
-import { Projects } from "./components/Projects";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -20,10 +19,9 @@ function App() {
           <Process />
           <AnimatedCounter />
           <Services />
-          <Projects />
           <Testimonials />
-          <Contact />
         </div>
+        <Footer />
       </div>
     </div>
   );

@@ -19,12 +19,8 @@ export const Services = () => {
     const splitText = new SplitText(".services-title", {
       type: "words",
     });
-    gsap.from(splitText.words, {
-      y: 100,
-      opacity: 0,
-      stagger: 0.1,
-      duration: 0.8,
-      ease: "sine2.inOut",
+
+    const servicesTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: "#services",
         start: "top center",
@@ -35,37 +31,37 @@ export const Services = () => {
       },
     });
 
-    gsap.from(".card-design", {
-      opacity: 0,
-      x: -100,
-      stagger: 0.2,
-      duration: 0.8,
-      ease: "sine2.inOut",
-      scrollTrigger: {
-        trigger: ".services-container",
-        start: "top center",
-        end: "70% center",
-        toggleActions: `${isMobile ? "play" : "restart"} none ${
-          isMobile ? "none" : "restart"
-        } none`,
-      },
-    });
+    servicesTimeline
+      .from(splitText.words, {
+        y: 100,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.8,
+        ease: "sine2.inOut",
+      })
+      .from(
+        ".card-design",
+        {
+          opacity: 0,
+          x: -100,
+          stagger: 0.2,
+          duration: 0.8,
+          ease: "sine2.inOut",
+        },
+        "-=0.4"
+      )
+      .from(
+        ".carousel-fade",
+        {
+          opacity: 0,
+          duration: 1.5,
+          ease: "sine2.inOut",
+          stagger: 0.3,
+        },
+        "-=0.6"
+      );
+  }, []);
 
-    gsap.from(".carousel-fade", {
-      opacity: 0,
-      duration: 2,
-      ease: "sine2.inOut",
-      stagger: 0.5,
-      scrollTrigger: {
-        trigger: ".services-container",
-        start: "top center",
-        end: "70% center",
-        toggleActions: `${isMobile ? "play" : "restart"} none ${
-          isMobile ? "none" : "restart"
-        } none`,
-      },
-    });
-  });
   return (
     <section
       id="services"

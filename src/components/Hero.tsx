@@ -37,7 +37,7 @@ export const Hero = () => {
           <p className="hero-text text-white md:text-6xl text-4xl font-light">
             Scale Bussiness to drive Results
           </p>
-          <p className="hero-text text-gray-300 sm:text-sm text-base text-center w-3/4 font-light">
+          <p className="hero-text text-gray-300 sm:text-sm text-base text-center md:w-1/2 w-4/5 font-light">
             Manage all your data and workflows in one place. Automate processes,
             gain insights, and scale your business with ease.
           </p>

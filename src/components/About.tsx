@@ -10,36 +10,42 @@ gsap.registerPlugin(SplitText);
 
 export const About = () => {
   useGSAP(() => {
-    const splitText = new SplitText(".introduce-text", {
-      type: "words",
-    });
-    gsap.from(splitText.words, {
-      y: 100,
-      opacity: 0,
-      stagger: 0.1,
-      duration: 0.8,
-      scrollTrigger: {
-        trigger: ".introduce-text",
-        start: "30% center",
-        end: "110% center",
-        toggleActions: `${isMobile ? "play" : "restart"} none ${
-          isMobile ? "none" : "restart"
-        } none`,
-      },
-    });
+    const runAnimation = async () => {
+      await (document as Document).fonts.ready;
 
-    const tl = gsap.timeline({
-      repeat: -1,
-      duration: 1.8,
-      ease: "sine.inOut",
-    });
+      const splitText = new SplitText(".introduce-text", {
+        type: "words",
+      });
+      gsap.from(splitText.words, {
+        y: 100,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: ".introduce-text",
+          start: "30% center",
+          end: "110% center",
+          toggleActions: `${isMobile ? "play" : "restart"} none ${
+            isMobile ? "none" : "restart"
+          } none`,
+        },
+      });
 
-    // Create a smoother pulse effect with better shadow progression
-    tl.to(".profile-point", {
-      scale: 5.5,
-      opacity: 0,
-    });
-  });
+      const tl = gsap.timeline({
+        repeat: -1,
+        duration: 1.8,
+        ease: "sine.inOut",
+      });
+
+      // Create a smoother pulse effect with better shadow progression
+      tl.to(".profile-point", {
+        scale: 5.5,
+        opacity: 0,
+      });
+    };
+
+    runAnimation();
+  }, []);
   return (
     <section id="about">
       <div className="about-container flex flex-col w-full items-center">

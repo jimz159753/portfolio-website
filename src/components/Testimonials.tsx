@@ -24,13 +24,13 @@ export const Testimonials = () => {
         } none`,
       },
     });
-  });
+  }, []);
   return (
     <section id="testimonials">
       <div className="flex-center">
         <HeaderWrapper>Testimonials</HeaderWrapper>
       </div>
-      <div className="lg:columns-3 md:columns-2 columns-1 mt-16">
+      <div className="lg:columns-3 md:columns-2 px-14 mt-16">
         {testimonials.map((testimonial, index) => (
           <CardWrapper
             key={index}
@@ -43,6 +43,7 @@ export const Testimonials = () => {
                     src={testimonial.imgPath}
                     alt=""
                     className="w-10 h-10 rounded-full"
+                    loading="lazy"
                   />
                 </div>
                 <div>

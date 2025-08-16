@@ -2,6 +2,7 @@ import { navigationItems } from "../lib/constants";
 import type { NavItem } from "../lib/interfaces";
 import { useScrollSmoother } from "../hooks/navbar";
 import React from "react";
+import crafters from "../assets/digital_crafters.webp";
 
 const NavItem: React.FC<{
   item: NavItem;
@@ -26,7 +27,12 @@ export const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xs border-b border-gray-700 flex justify-between items-center px-6 py-4">
       {/* Logo/Brand */}
-      <div className="text-xl font-bold text-white">Portfolio</div>
+      <img
+        src={crafters}
+        alt="digital crafters"
+        className="w-50 h-8"
+        loading="lazy"
+      />
 
       {/* Desktop Navigation - Right side */}
       <ul className="hidden md:flex gap-8 group">

@@ -65,7 +65,6 @@ export const navigationItems: NavItem[] = [
   { id: "process", label: "Process" },
   { id: "services", label: "Services" },
   { id: "testimonials", label: "Testimonials" },
-  { id: "contact", label: "Contact" },
 ];
 
 export const processData = [
@@ -105,24 +104,24 @@ export const skillsData = [
 
 export const historyData = [
   {
-    position: "Fullstack Developer",
+    position: "Software Engineer Lead",
     company: "Brillio",
+    year: "2022",
+  },
+  {
+    position: "Sr. Software Engineer",
+    company: "3 Pillar Global",
+    year: "2021",
+  },
+  {
+    position: "Sr. Frontend Developer",
+    company: "Improving",
     year: "2020",
   },
   {
-    position: "Fullstack Developer",
-    company: "3 Pillar Global",
-    year: "2019",
-  },
-  {
-    position: "Fullstack Developer",
-    company: "Improving",
-    year: "2018",
-  },
-  {
-    position: "Fullstack Developer",
+    position: "Sr. Fullstack Developer",
     company: "Lenovo",
-    year: "2017",
+    year: "2019",
   },
 ];
 
