@@ -51,7 +51,7 @@ export const About = () => {
       <div className="about-container flex flex-col w-full items-center">
         <div className="flex-center flex-col gap-10 w-4/5">
           <HeaderWrapper>About Me</HeaderWrapper>
-          <p className="introduce-text text-color-white-50 text-5xl font-light">
+          <p className="introduce-text text-color-white-50 md:text-5xl text-4xl font-light">
             Luis Jimenez,{" "}
             <span className="text-gray-400">Your Software Engineer</span>
           </p>

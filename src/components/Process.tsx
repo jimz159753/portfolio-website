@@ -95,7 +95,7 @@ export const Process = () => {
 
   return (
     <section id="process">
-      <div className="flex md:flex-row flex-col md:justify-between justify-center md:h-[100dvh]">
+      <div className="flex md:flex-row flex-col md:justify-between justify-center lg:h-[100dvh]">
         <div className="process-image md:w-1/2 w-full md:p-0 p-10 relative overflow-hidden rounded-xl ">
           <img
             src={process}
@@ -106,7 +106,7 @@ export const Process = () => {
 
         <div className="md:w-1/2 w-full flex flex-col justify-between gap-4 px-10">
           <HeaderWrapper>How it works</HeaderWrapper>
-          <h1 className="process-title text-color-white-50 text-6xl font-light">
+          <h1 className="process-title text-color-white-50 md:text-6xl text-5xl font-light">
             Process <span className="text-gray-400">is Everything</span>
           </h1>
           <p className="text-gray-400 text-lg">

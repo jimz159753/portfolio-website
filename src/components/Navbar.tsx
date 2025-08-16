@@ -25,7 +25,7 @@ export const Navbar = () => {
     useScrollSmoother();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xs border-b border-gray-700 flex justify-between items-center px-6 py-4">
+    <nav className="fixed w-[100dvw] top-0 left-0 right-0 z-50 backdrop-blur-xs border-b border-gray-700 flex justify-between items-center px-6 py-4">
       {/* Logo/Brand */}
       <img
         src={crafters}

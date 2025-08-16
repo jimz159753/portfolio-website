@@ -137,21 +137,11 @@
     margin-bottom: 1rem;
   }
 
-  /* Ensure proper card spacing on mobile */
-  .cards-container {
-    gap: 2rem !important;
-  }
-
   /* Fix card padding on small screens */
   .card,
   .card-design,
   .process-card {
     padding: 1.5rem !important;
-  }
-
-  /* Ensure absolute positioned elements work properly */
-  .process-card .absolute {
-    position: absolute !important;
   }
 }
 

@@ -69,7 +69,7 @@ export const Services = () => {
     >
       <div className="flex flex-col w-3/4 gap-4">
         <HeaderWrapper>Services</HeaderWrapper>
-        <h1 className="services-title text-color-white-50 text-6xl font-light">
+        <h1 className="services-title text-color-white-50 md:text-6xl text-5xl font-light">
           Development <span className="text-gray-400">Services</span>
         </h1>
 
