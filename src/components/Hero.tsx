@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import processorVideo from "../assets/processor.mp4";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,7 +31,7 @@ export const Hero = () => {
           className="absolute inset-0 w-full h-full object-cover"
           style={{ filter: "brightness(0.2)" }}
         >
-          <source src="/src/assets/processor.mp4" type="video/mp4" />
+          <source src={processorVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute sm:w-3/4 w-full text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-roboto-flex text-2xl flex flex-col gap-4 items-center">
