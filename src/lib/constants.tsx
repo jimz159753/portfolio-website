@@ -1,4 +1,10 @@
 import type { NavItem } from "./interfaces";
+import minerva from "../assets/minerva.webp";
+import victor from "../assets/victor.webp";
+import oscar from "../assets/oscar.webp";
+import max from "../assets/max.webp";
+import tommy from "../assets/tommy.webp";
+import jimmy from "../assets/jimmy.webp";
 
 import {
   ListCheck,
@@ -17,46 +23,46 @@ import {
 
 export const testimonials = [
   {
-    name: "Esther Howard",
-    mentions: "@estherhoward",
+    name: "Minerva Becerra",
+    mentions: "@mnrvbecerra",
     review:
       "I can’t say enough good things about Luis. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
-    imgPath: "/images/client1.png",
+    imgPath: minerva,
   },
   {
-    name: "Wade Warren",
-    mentions: "@wadewarren",
+    name: "Victor Diaz",
+    mentions: "@vict.diaz",
     review:
       "Working with Luis was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
-    imgPath: "/images/client3.png",
+    imgPath: victor,
   },
   {
-    name: "Guy Hawkins",
-    mentions: "@guyhawkins",
+    name: "Oscar Vallin",
+    mentions: "@oscar.vallin",
     review:
       "Collaborating with Luis was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Luis's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Luis is the ideal partner.",
-    imgPath: "/images/client2.png",
+    imgPath: oscar,
   },
   {
-    name: "Marvin McKinney",
-    mentions: "@marvinmckinney",
+    name: "Max D. Hardwell",
+    mentions: "@mxd.hardwell",
     review:
       "Luis was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
-    imgPath: "/images/client5.png",
+    imgPath: max,
   },
   {
-    name: "Floyd Miles",
-    mentions: "@floydmiles",
+    name: "Tommy Velez",
+    mentions: "@tommy.velez",
     review:
       "Luis’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
-    imgPath: "/images/client4.png",
+    imgPath: tommy,
   },
   {
-    name: "Albert Flores",
-    mentions: "@albertflores",
+    name: "Jimmy McMillan",
+    mentions: "@jimmy.mcmillan",
     review:
       "Luis was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
-    imgPath: "/images/client6.png",
+    imgPath: jimmy,
   },
 ];
 
@@ -102,26 +108,30 @@ export const skillsData = [
   "Mobile App Development",
 ];
 
-export const historyData = [
+export const industries = [
   {
-    position: "Software Engineer Lead",
-    company: "Brillio",
-    year: "2022",
+    name: "Ecommerce",
   },
   {
-    position: "Sr. Software Engineer",
-    company: "3 Pillar Global",
-    year: "2021",
+    name: "Real Estate",
   },
   {
-    position: "Sr. Frontend Developer",
-    company: "Improving",
-    year: "2020",
+    name: "Healthcare",
   },
   {
-    position: "Sr. Fullstack Developer",
-    company: "Lenovo",
-    year: "2019",
+    name: "Education",
+  },
+  {
+    name: "Finance",
+  },
+  {
+    name: "Marketing",
+  },
+  {
+    name: "Technology",
+  },
+  {
+    name: "Entertainment",
   },
 ];
 

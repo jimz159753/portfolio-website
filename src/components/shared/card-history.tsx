@@ -1,4 +1,4 @@
-import { historyData, skillsData } from "../../lib/constants";
+import { industries, skillsData } from "../../lib/constants";
 
 export const CardHistory = () => (
   <div className="card-border rounded-lg p-10 flex flex-col gap-4 md:w-1/2 sm:w-full">
@@ -20,15 +20,13 @@ export const CardHistory = () => (
       ))}
     </div>
     <div className="w-full border border-gray-500 " />
-    <div className="flex flex-col gap-4">
-      {historyData.map((item) => (
+    <div className="flex flex-wrap gap-4">
+      {industries.map((item) => (
         <div
-          className="flex md:flex-row flex-col justify-between bg-neutral-950 rounded-lg py-4 px-4"
-          key={item.year}
+          className="flex md:flex-row flex-wrap w-fit flex-col justify-between bg-neutral-950 rounded-lg py-4 px-4"
+          key={item.name}
         >
-          <p className="text-gray-500">{item.position}</p>
-          <p className="text-gray-500">{item.company}</p>
-          <p className="text-gray-500">{item.year}</p>
+          <p className="text-gray-500">{item.name}</p>
         </div>
       ))}
     </div>
