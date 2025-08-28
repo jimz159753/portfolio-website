@@ -25,9 +25,7 @@ export const About = () => {
           trigger: ".introduce-text",
           start: "30% center",
           end: "110% center",
-          toggleActions: `${isMobile ? "play" : "restart"} none ${
-            isMobile ? "none" : "reverse"
-          } none`,
+          toggleActions: `${isMobile ? "play" : "restart"} none none none`,
         },
       });
 
