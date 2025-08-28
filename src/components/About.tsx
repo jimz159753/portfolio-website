@@ -26,7 +26,7 @@ export const About = () => {
           start: "30% center",
           end: "110% center",
           toggleActions: `${isMobile ? "play" : "restart"} none ${
-            isMobile ? "none" : "restart"
+            isMobile ? "none" : "reverse"
           } none`,
         },
       });

@@ -23,7 +23,7 @@ export const Process = () => {
         start: "top center",
         end: "70% center",
         toggleActions: `${isMobile ? "play" : "restart"} none ${
-          isMobile ? "none" : "restart"
+          isMobile ? "none" : "reverse"
         } none`,
       },
     });

@@ -19,9 +19,7 @@ export const Testimonials = () => {
         trigger: "#testimonials",
         start: "top 90%",
         end: "bottom center",
-        toggleActions: `${isMobile ? "play" : "restart"} none ${
-          isMobile ? "none" : "restart"
-        } none`,
+        toggleActions: `${isMobile ? "play" : "restart"} none none`,
       },
     });
   }, []);

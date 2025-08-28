@@ -25,9 +25,7 @@ export const Services = () => {
         trigger: "#services",
         start: "top center",
         end: "70% center",
-        toggleActions: `${isMobile ? "play" : "restart"} none ${
-          isMobile ? "none" : "restart"
-        } none`,
+        toggleActions: `${isMobile ? "play" : "restart"} none none`,
       },
     });
 
