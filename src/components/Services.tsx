@@ -35,7 +35,7 @@ export const Services = () => {
         opacity: 0,
         stagger: 0.1,
         duration: 0.8,
-        ease: "sine2.inOut",
+        ease: "sine.inOut",
       })
       .from(
         ".card-design",
@@ -44,19 +44,20 @@ export const Services = () => {
           x: -100,
           stagger: 0.2,
           duration: 0.8,
-          ease: "sine2.inOut",
+          ease: "sine.inOut",
         },
-        "-=0.4"
+        0.2
       )
       .from(
         ".carousel-fade",
         {
           opacity: 0,
-          duration: 1.5,
-          ease: "sine2.inOut",
-          stagger: 0.3,
+          y: 30,
+          duration: 1.0,
+          ease: "sine.inOut",
+          stagger: 0.2,
         },
-        "-=0.6"
+        0.8
       );
   }, []);
 
