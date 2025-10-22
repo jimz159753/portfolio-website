@@ -1,7 +1,7 @@
 import { industries, skillsData } from "../../lib/constants";
 
 export const CardHistory = () => (
-  <div className="card-border rounded-lg p-10 flex flex-col gap-4 md:w-1/2 sm:w-full">
+  <div className="card-border rounded-lg p-10 flex flex-col gap-4 md:w-1/2 sm:w-full justify-around">
     <p className="text-gray-400">
       I'm Luis Jimenez dedicated in developing software solutions based in the
       vibrant city of México. I specialize in building web applications using
