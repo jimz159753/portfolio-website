@@ -7,7 +7,7 @@ export const CardProfile = () => (
       <img
         src={profile}
         alt="Luis Jimenez"
-        className="w-full grayscale brightness-80 rounded-lg"
+        className="w-auto grayscale brightness-80 rounded-lg"
       />
       <div className="absolute bottom-5 bg-black-50 flex items-center gap-3 px-3 py-2 rounded-full w-fit h-fit">
         <div className="profile-point rounded-full w-1.5 h-1.5 bg-green-500 shadow-xl" />
